@@ -3,6 +3,11 @@ import sqlalchemy
 from .db_session import SqlAlchemyBase
 
 
+association_table = Table('association', Base.metadata,
+    Column('users_id', Integer, ForeignKey('users.id')),
+    Column('lessons_id', Integer, ForeignKey('lessons.id'))
+
+
 class User(SqlAlchemyBase):
     __tablename__ = 'users'
 
@@ -10,9 +15,9 @@ class User(SqlAlchemyBase):
                            primary_key=True, autoincrement=True)
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     surname = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    clas = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
+    klas = sqlalchemy.Column(sqlalchemy.Integer, nullable=True)
     email = sqlalchemy.Column(sqlalchemy.String,
                               index=True, unique=True, nullable=True)
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    created_date = sqlalchemy.Column(sqlalchemy.DateTime,
-                                     default=datetime.datetime.now)
+    children = relationship("Lessons",
+                            secondary=association_table)
