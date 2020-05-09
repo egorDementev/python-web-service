@@ -11,3 +11,5 @@ class Subject(SqlAlchemyBase):
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
     name_of_subject = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    less = orm.relation("Lessons", back_populates='sub')
+    user = orm.relation('User')
