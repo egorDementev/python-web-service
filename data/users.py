@@ -25,3 +25,9 @@ class User(SqlAlchemyBase):
     children = relationship("Lessons",
                             secondary=association_table)
     sub = orm.relation('Subject')
+
+    def set_password(self, password):
+        self.hashed_password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.hashed_password, password)
