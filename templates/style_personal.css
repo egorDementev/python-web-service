@@ -24,3 +24,39 @@ body{
   top: 5%;
   left: 0%;
   }
+
+.child2{
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  }
+
+.child3{
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  }
+
+.child4{
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  }
+
+.child5{
+  position: absolute;
+  top: 77%;
+  left: 50%;
+  }
+
+.child6{
+  position: absolute;
+  top: 105.5%;
+  left: 50%;
+  }
+
+.child7{
+  position: absolute;
+  top: 134%;
+  left: 50%;
+  }

@@ -16,3 +16,6 @@ class Lessons(SqlAlchemyBase):
     subject_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("subject.id"))
     sub = orm.relation('Subject')
+    users = orm.relation("User",
+                 secondary="association",
+                 backref="lessons", lazy='dynamic')
