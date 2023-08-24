@@ -3,11 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Вход</title>
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style_form_in.css">
+    <link rel="stylesheet" href="/static/css/style_form_in.css">
+          <style>
+body {
+background: url(static/image/7.png);
+}
+</style>
        </head>
   <body>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -21,7 +25,8 @@
 
 <div class="child">
     <div class="container">
-<form id="register-form" role="form" action="/auth/register/" method="post">
+<form action="" method="post">
+    {{ form.hidden_tag() }}
     <div class="row">
         <div class="form-group col-xs-3">
             <div class="control-group required">
@@ -38,11 +43,12 @@
                 <h3>Введите пароль:</h3>
                 </header>
                 <div class="controls">
-                    <input class="form-control" id="hashed_password" maxlength="30" name="hashed_password" type="int" />
+                    <input class="form-control" id="password" maxlength="30" name="password" type="password" />
                 </div>
 
                 <div class="child1">
-                <button type="button" class="btn btn-success" style="width:200x;height:50px">Войти</button>
+                    <h3>{{message}}</h3>
+                    <p>{{ form.submit(type="submit", class="btn btn-warning", style="width:150x;height:50px") }}</p>
                 </div>
             </div>
         </div>

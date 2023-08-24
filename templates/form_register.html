@@ -7,7 +7,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style_form.css">
+    <link rel="stylesheet" href="/static/css/style_form.css">
+          <style>
+body {
+background: url(static/image/7.png);
+}
+</style>
        </head>
   <body>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -21,7 +26,9 @@
 
 <div class="child">
     <div class="container">
-<form id="register-form" role="form" action="/auth/register/" method="post">
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
     <div class="row">
         <div class="form-group col-xs-3">
             <div class="control-group required">
@@ -59,16 +66,15 @@
                 <div class="controls">
                     <input class="form-control" id="klas" maxlength="30" name="klas" type="int" />
                 </div>
-                {{message}}
                 <div class="child1">
-                <button type="button" class="btn btn-warning" onclick="document.location='/register'" style="width:150x;height:50px">Зарегистрироваться</button>
+                    <h3>{{message}}</h3>
+                    <p>{{ form.submit(type="submit", class="btn btn-warning", style="width:150x;height:50px") }}</p>
                 </div>
             </div>
         </div>
     </div>
 </form>
     </div>
-
 </div>
   </body>
 </html>

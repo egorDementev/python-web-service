@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Личный кабинет</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style_personal.css">
+          <style>
+body {
+background: url(static/image/8.png);
+}
+</style>
+       </head>
+  <body>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  <div class="child1">
+      <header class="header">
+          <center><h2 style="position:fixed; top:5%;  left:5%">Личный кабинет</h2></center>
+      </header>
+    </div>
+
+    <div style="position:fixed; top:10%;  left:70%">
+        <header class="header">
+            <h3>{{name}}</h3>
+        </header>
+    </div>
+
+    <div style="position:fixed; top:26%;  left:5%">
+        <img style="position:fixed; top:20%;  left:0%" src="static/image/base.png">
+        <button type="button" onclick="document.location='/get_class'" style="font-size : 60px; position: absolute;
+        color: white;" class="btn btn-link">Выбрать новый урок</button>
+    </div>
+  </body>
+</html>
