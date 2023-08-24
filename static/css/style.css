@@ -1,5 +1,5 @@
 ﻿body{
- background: url(4.png);
+ background: url(static/image/4.png);
 }
 
 .child{
@@ -18,8 +18,8 @@
 }
 .child1{
   position: absolute;
-  top: 17%;
-  left: 3%;
+  top: 5%;
+  left: 10%;
   }
 
 .child2{
@@ -88,7 +88,7 @@ left: 42%;
   position: relative;
   font-family: "Bebas Neue Cyrillic", sans-serif;
   font-size: 4em;
-  font-weight: 700;
+  font-weight: 0;
   color: #c2c1c1;
   }
 
